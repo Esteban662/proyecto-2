@@ -7,39 +7,28 @@ if(localStorage.getItem()){
 
 }
 
+function guardarEmail(email){
+    email = prompt("Ingrese su email")
+    let arrEjemplo = email.split("")
+    if(arrEjemplo.includes("@") && arrEjemplo.includes(".")){
+        localStorage.setItem("email", email)
+    }else{alert("Datos invalidos")}
+    
+}
 
-
-
-
+function emailValid(email){ 
+   do {
+       guardarEmail(email);
+   } while (localStorage.getItem("email") === null);
+}
 
 function inicioUsuario(nombre, email){
-    let preguntaInicial = false
-    do {
-        preguntaInicial = confirm("Desea ingresar su nombre y su email?")
-        if(preguntaInicial === true){
-            nombre = prompt("Ingrese su nombre")
-            localStorage.setItem("nombre", nombre)
-            email = prompt("Ingrese su email")
-            validarEmail(email)
-            
-        
-            
-        }
-    } while (preguntaInicial === false);
+nombre = prompt("Ingrese su nombre")
+localStorage.setItem("nombre", nombre)
+emailValid(email)
 }
 
-function validarEmail(email){
-    arrEmail = [] 
-    arrEmail = email.split("")
-    let bandera = false
-    let bandera2 = false
-    let largo = arrEmail.length
-    for(let i = 0; i<largo; i++){
-        if(arrEmail[i] == "@" ){
-            bandera = true
-        }else if(arrEmail[i] == "."){
-            bandera2 = true
-        }
-    }
 
-}
+
+
+
