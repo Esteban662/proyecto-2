@@ -2,13 +2,27 @@
 let nombre = ""
 let email = ""
 let confirmacion=""
-
+let mailTo
 
 if(localStorage.getItem("nombre")){
     alert("Bienvenido " + localStorage.getItem("nombre"))
 }else{
     inicioUsuario(nombre,email)
+    
 }
+
+
+
+
+function enviarMail(mail){
+   mail = confirm("Desea recibir mails con novedades?")
+    if(mail == true){
+        alert("Estaremos enviandole las ultimas novedades a " + localStorage.getItem("email"))
+        localStorage.setItem("mail", mail)
+    }
+}
+
+
 
 function guardarEmail(email){
 
@@ -16,6 +30,7 @@ function guardarEmail(email){
     let arrEmail = email.split("")
     if(arrEmail.includes("@") && arrEmail.includes(".")){
         localStorage.setItem("email", email)
+        enviarMail(mailTo)
     }else{alert("Datos invalidos")}
  
 }
