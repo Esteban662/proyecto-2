@@ -4,10 +4,10 @@ let email = ""
 let confirmacion=""
 
 
-//if(localStorage.getItem()){
+if(localStorage.getItem(){
     
 
-//}
+}
 
 function guardarEmail(email){
 
@@ -28,7 +28,7 @@ function emailValid(email){
 
 
 function inicioUsuario(nombre, email){
-        confirmacion= confirm("Desea ingresar Nombre e email?")
+        confirmacion= confirm("Desea ingresar Nombre y email?")
         if(confirmacion==true){ nombre = prompt("Ingrese su nombre")
         localStorage.setItem("nombre", nombre)
         emailValid(email);}else{
