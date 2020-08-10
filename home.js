@@ -29,7 +29,9 @@ localStorage.setItem("nombre", nombre)
 emailValid(email);
 
 }
-inicioUsuario(nombre,email);
+inicioUsuario();
+
+
 
 
 
