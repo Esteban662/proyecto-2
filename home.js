@@ -26,6 +26,7 @@ function emailValid(email){
 
 
 function inicioUsuario(nombre, email){
+        confirm("Desea ingresar su Nombre y Email?")
         nombre = prompt("Ingrese su nombre")
         localStorage.setItem("nombre", nombre)
         emailValid(email);
