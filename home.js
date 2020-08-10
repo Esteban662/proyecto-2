@@ -23,12 +23,15 @@ function emailValid(email){
    } while (localStorage.getItem("email") === null);
 }
 
-function inicioUsuario(nombre, email){
-nombre = prompt("Ingrese su nombre")
-localStorage.setItem("nombre", nombre)
-emailValid(email);
 
+
+function inicioUsuario(nombre, email){
+        nombre = prompt("Ingrese su nombre")
+        localStorage.setItem("nombre", nombre)
+        emailValid(email);
 }
+
+
 inicioUsuario();
 
 
