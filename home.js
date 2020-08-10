@@ -14,9 +14,7 @@ function guardarEmail(email){
     if(arrEjemplo.includes("@") && arrEjemplo.includes(".")){
         localStorage.setItem("email", email)
     }else{alert("Datos invalidos")}
-      
  
-   
 }
 
 function emailValid(email){ 
