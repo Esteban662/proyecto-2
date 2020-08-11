@@ -143,7 +143,7 @@ iframe{
     width:250px;
     height: 275px; 
     border-radius: 18em;
-    -moz-transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+   /* -moz-transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);*/
 }
 
 #foto2{
