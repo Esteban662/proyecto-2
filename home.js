@@ -61,14 +61,10 @@ function emailValid(email) {
   } while (localStorage.getItem("email") === null);
 }
 
-function inicioUsuario(nombre, email) {
-  confirmacion = confirm("Desea ingresar Nombre e email?");
-  if (confirmacion == true) {
-    nombreValid(nombre);
-    emailValid(email);
-  } else {
-    alert("Difrute la pagina!!!");
-  }
+function inicioUsuario(){
+    nombreValid()
+    emailValid()
+    alert("Difrute la pagina!!!")
 }
 
 function nombreValid(nombre) {
