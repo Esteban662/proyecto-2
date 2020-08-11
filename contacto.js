@@ -68,10 +68,10 @@ function inicioUsuario(nombre, email){
     function nombreValid(nombre){
         do {
             nombre = prompt("Ingrese su nombre")
-            nombre.trim(" ")
-            if(nombre == ""){
+            
+            if(nombre.trim() == ""){
                 alert("Ingrese datos validos")
             }else{return localStorage.setItem("nombre", nombre) }
-        } while (nombre == "");
+        } while (nombre=="" || nombre!==undefined);
     }
     
