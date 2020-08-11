@@ -71,10 +71,10 @@ function inicioUsuario(nombre, email){
         do {
             nombre = prompt("Ingrese su nombre")
             nombre.trim(" ")
-            if(nombre == "" || nombre.lenght!==0){
+            if(nombre == ""){
                 alert("Ingrese datos validos")
             }else{return localStorage.setItem("nombre", nombre) }
-        } while (nombre == "" || nombre == " ");
+        } while (nombre == "");
     }
     
     
