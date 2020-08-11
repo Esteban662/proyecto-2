@@ -115,6 +115,17 @@ iframe{
    
     
 }
+
+.hotsale{
+    background-color:black;
+    margin-left: 280px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 1em;
+    justify-content:center;
+
+}
 .caja{
     background-color:#fff ;
     margin: 5px;
