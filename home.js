@@ -6,7 +6,7 @@ let mailTo
 const fecha = new Date();
 const hora = fecha.getHours();
 if(localStorage.getItem("nombre")){
-    alert("Hola" + nombre)
+    
     saludaHora(hora)
 }else{
      inicioUsuario(nombre,email)
