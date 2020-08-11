@@ -6,6 +6,7 @@ const fecha = new Date();
 const hora = fecha.getHours();
 if(localStorage.getItem("nombre")){
     saludaHora(hora)
+    cuponDescuento()
 }else{
      inicioUsuario(nombre,email)
     
@@ -75,3 +76,28 @@ function inicioUsuario(nombre, email){
         } while (nombre=="" || nombre!==undefined);
     }
     
+
+    function cuponDescuento(PROMO){
+
+        PROMO =  Math.floor(Math.random() * 4) + 1;
+          
+           switch (PROMO) {
+               case 1:
+                  alert("Estimado " + nombre +". Gracias por elegirnos! Le obsequiamos el codigo (5HOTSALE) para obtener un 5% de descuento con su compra")
+                   break;
+              case 2:
+                  alert("Estimado " + nombre +". Gracias por elegirnos! Le obsequiamos el codigo (10HOTSALE) para obtener un 10% de descuentocon su compra")
+                  break
+              case 3:
+                  alert("Estimado " + nombre +". Gracias por elegirnos! Le obsequiamos el codigo (15HOTSALE) para obtener un 15% de descuento con su compra")
+                  break
+              case 4:
+                  alert("Estimado " + nombre +". Gracias por elegirnos! Le obsequiamos el codigo (20HOTSALE) para obtener un 20% de descuento con su compra")
+                  break
+              case 5:
+                  alert("Estimado " + nombre +". Gracias por elegirnos! Le obsequiamos el codigo (25HOTSALE) para obtener un 25% de descuento con su compra")
+                  break 
+              default:
+                   break;
+           }
+       }
