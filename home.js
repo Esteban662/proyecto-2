@@ -6,6 +6,7 @@ let mailTo
 const fecha = new Date();
 const hora = fecha.getHours();
 if(localStorage.getItem("nombre")){
+    alert("Hola" + nombre)
     saludaHora(hora)
 }else{
      inicioUsuario(nombre,email)
@@ -70,10 +71,10 @@ function inicioUsuario(nombre, email){
         do {
             nombre = prompt("Ingrese su nombre")
             nombre.trim(" ")
-            if(nombre == ""){
+            if(nombre == "" || nombre.lenght!==0){
                 alert("Ingrese datos validos")
             }else{return localStorage.setItem("nombre", nombre) }
-        } while (nombre == "");
+        } while (nombre == "" || nombre == " ");
     }
     
     
