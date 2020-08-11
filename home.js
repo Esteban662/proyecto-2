@@ -5,12 +5,17 @@ let confirmacion=""
 let mailTo
 const fecha = new Date();
 const hora = fecha.getHours();
-if(localStorage.getItem("nombre")){
-    
-    saludaHora(hora)
+
+if(localStorage.getItem("confirmacion")== "false"){
+    saludaHora()
 }else{
-     inicioUsuario(nombre,email)
-    
+    confirmacion= confirm("Desea ingresar Nombre e email?")
+    localStorage.setItem("confirmacion", confirmacion)
+    if(localStorage.getItem("confirmacion")==true){
+        inicioUsuario()
+    }else{
+        saludaHora()
+    }
 }
 
 
@@ -54,15 +59,11 @@ function emailValid(email){
 }
 
 
-function inicioUsuario(nombre, email){
-    confirmacion= confirm("Desea ingresar Nombre e email?")
-    if(confirmacion==true){ 
-        nombreValid(nombre)
-        emailValid(email);}else{
-            alert("Difrute la pagina!!!")
-        }
-        
-    }
+function inicioUsuario(){
+    nombreValid()
+    emailValid()
+    alert("Difrute la pagina!!!")
+}
     
     function nombreValid(nombre){
         do {
