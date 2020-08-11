@@ -6,7 +6,7 @@ const fecha = new Date();
 const hora = fecha.getHours();
 if(localStorage.getItem("nombre")){
     
-    saludaHora(hora)
+    
     cuponDescuento()
 }else{
      inicioUsuario(nombre,email)

@@ -6,7 +6,7 @@ let popUp
 const fecha = new Date();
 const hora = fecha.getHours();
 if(localStorage.getItem("nombre")){
-    saludaHora(hora)
+
     preguntaPopUp()
 }else{
      inicioUsuario(nombre,email)
