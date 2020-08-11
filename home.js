@@ -5,10 +5,17 @@ let confirmacion = "";
 let mailTo;
 const fecha = new Date();
 const hora = fecha.getHours();
-if (localStorage.getItem("nombre")) {
-  saludaHora(hora);
-} else {
-  inicioUsuario(nombre, email);
+
+if(localStorage.getItem("confirmacion")== "false"){
+    saludaHora()
+}else{
+    confirmacion= confirm("Desea ingresar Nombre e email?")
+    localStorage.setItem("confirmacion", confirmacion)
+    if(localStorage.getItem("confirmacion")==true){
+        inicioUsuario()
+    }else{
+        saludaHora()
+    }
 }
 
 function saludaHora(hora) {
@@ -68,10 +75,20 @@ function nombreValid(nombre) {
   do {
     nombre = prompt("Ingrese su nombre");
 
-    if (nombre.trim() == "") {
-      alert("Ingrese datos validos");
-    } else {
-      return localStorage.setItem("nombre", nombre);
+function inicioUsuario(){
+    nombreValid()
+    emailValid()
+    alert("Difrute la pagina!!!")
+}
+    
+    function nombreValid(nombre){
+        do {
+            nombre = prompt("Ingrese su nombre")
+            
+            if(nombre.trim() == ""){
+                alert("Ingrese datos validos")
+            }else{return localStorage.setItem("nombre", nombre) }
+        } while (nombre=="" || nombre!==undefined);
     }
   } while (nombre == "" || nombre !== undefined);
 }

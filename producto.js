@@ -5,12 +5,17 @@ let mailTo
 let popUp
 const fecha = new Date();
 const hora = fecha.getHours();
-if(localStorage.getItem("nombre")){
-    saludaHora(hora)
+
+if(localStorage.getItem("confirmacion")== "false"){
     preguntaPopUp()
 }else{
-     inicioUsuario(nombre,email)
-    
+    confirmacion= confirm("Desea ingresar Nombre e email?")
+    localStorage.setItem("confirmacion", confirmacion)
+    if(localStorage.getItem("confirmacion")==true){
+        inicioUsuario()
+    }else{
+        preguntaPopUp()
+    }
 }
 
 
@@ -36,7 +41,7 @@ function enviarMail(mail, popUp){
 }
 
 function preguntaPopUp(popUp){
-       popUp = confirm("Tenemos ofertas personalizadas que podrian interesarles, desea verlas?")
+       popUp = confirm("Tenemos ofertas personalizadas que podrian interesarte, desea verlas?")
       
        if(popUp == true){
            window.location.replace("ofertasPersonalizadas.html");
@@ -62,16 +67,11 @@ function emailValid(email){
 }
 
 
-function inicioUsuario(nombre, email){
-    confirmacion= confirm("Desea ingresar Nombre e email?")
-    if(confirmacion==true){ 
-        nombreValid(nombre)
-        emailValid(email);}else{
-            alert("Difrute la pagina!!!")
-        }
-        
-    }
-    
+function inicioUsuario(){
+    nombreValid()
+    emailValid()
+    alert("Difrute la pagina!!!")
+}
     
 
     
