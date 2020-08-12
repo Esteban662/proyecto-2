@@ -2,7 +2,8 @@ let nombre = ""
 let email = ""
 let confirmacion=""
 let mailTo
-
+const fecha = new Date();
+const hora = fecha.getHours();
 if (localStorage.getItem("confirmacion")==null){
 
     confirmacion = confirm("Desea ingresar Nombre e email?")
@@ -19,16 +20,14 @@ if (localStorage.getItem("confirmacion")==null){
 
 
 //Funciones
-
-
 //Inicio de usuario
 function inicioUsuario(){
     nombreValid()
     emailValid()
-    alert("Difrute la pagina!!!")
+    saludaHoraInicio()
 }
 
-//Nombre
+//Guardar y validar nombre
 function nombreValid(nombre){
     do {
         nombre = prompt("Ingrese su nombre")
@@ -39,8 +38,7 @@ function nombreValid(nombre){
     } while (nombre=="" || nombre!==undefined);
 }
 
-
-//Email
+//Guardar y validar email
 function guardarEmail(email){
 
     email = prompt("Ingrese su email")
@@ -58,6 +56,7 @@ function emailValid(email){
     } while (localStorage.getItem("email") === null);
  }
 
+ //Preguntar para enviar mail
 function enviarMail(mail){
     mail = confirm("Desea recibir mails con novedades?")
      if(mail == true){
@@ -76,3 +75,18 @@ function cuponDescuento() {
     alert("Estimado. Gracias por elegirnos! Le obsequiamos el codigo " + arrPromo[PROMO] + "con su compra")
 
 }
+//Saluda segun hora
+function saludaHoraInicio() {
+    if (hora >= 00 && hora <= 06) {
+      alert("Buenas madrugadas " + localStorage.getItem("nombre") + ". Difrute la pagina!!!" );
+  }
+  if (hora >= 07 && hora <= 12) {
+    alert("Buen dia " + localStorage.getItem("nombre") + ". Difrute la pagina!!!");
+  }
+  if (hora >= 13 && hora <= 18) {
+    alert("Buenas tardes " + localStorage.getItem("nombre") + ". Difrute la pagina!!!");
+  }
+  if (hora >= 19 && hora <= 23) {
+    alert("Buenas noches " + localStorage.getItem("nombre") + ". Difrute la pagina!!!");
+  }
+  }
