@@ -67,16 +67,7 @@ function inicioUsuario(){
     alert("Difrute la pagina!!!")
 }
 
-function nombreValid(nombre) {
-  do {
-    nombre = prompt("Ingrese su nombre");
 
-function inicioUsuario(){
-    nombreValid()
-    emailValid()
-    alert("Difrute la pagina!!!")
-}
-    
     function nombreValid(nombre){
         do {
             nombre = prompt("Ingrese su nombre")
@@ -86,8 +77,6 @@ function inicioUsuario(){
             }else{return localStorage.setItem("nombre", nombre) }
         } while (nombre=="" || nombre!==undefined);
     }
-  } while (nombre == "" || nombre !== undefined);
-}
  
 
 
