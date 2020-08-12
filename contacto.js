@@ -68,27 +68,11 @@ function enviarMail(mail){
 
 //Cupones
 
-function cuponDescuento(PROMO){
+function cuponDescuento() {
+    let max = 4;
+    let min = 1;
+    let PROMO = Math.floor(Math.random() * max) + min;
+    let arrPromo = ["5HOTSALE para obtener un 5% de descuento","10HOTSALE para obtener un 10% de descuento","15HOTSALE para obtener un 15% de descuento","20HOTSALE para obtener un 20% de descuento","25HOTSALE para obtener un 25% de descuento"];
+    alert("Estimado. Gracias por elegirnos! Le obsequiamos el codigo " + arrPromo[PROMO] + "con su compra")
 
-    PROMO =  Math.floor(Math.random() * 4) + 1;
-      
-       switch (PROMO) {
-           case 1:
-              alert("Estimado " + localStorage.getItem("nombre") +". Gracias por elegirnos! Le obsequiamos el codigo (5HOTSALE) para obtener un 5% de descuento con su compra")
-               break;
-          case 2:
-              alert("Estimado " + localStorage.getItem("nombre") +". Gracias por elegirnos! Le obsequiamos el codigo (10HOTSALE) para obtener un 10% de descuentocon su compra")
-              break
-          case 3:
-              alert("Estimado " + localStorage.getItem("nombre") +". Gracias por elegirnos! Le obsequiamos el codigo (15HOTSALE) para obtener un 15% de descuento con su compra")
-              break
-          case 4:
-              alert("Estimado " + localStorage.getItem("nombre") +". Gracias por elegirnos! Le obsequiamos el codigo (20HOTSALE) para obtener un 20% de descuento con su compra")
-              break
-          case 5:
-              alert("Estimado " + localStorage.getItem("nombre") +". Gracias por elegirnos! Le obsequiamos el codigo (25HOTSALE) para obtener un 25% de descuento con su compra")
-              break 
-          default:
-               break;
-       }
-   }
+}
