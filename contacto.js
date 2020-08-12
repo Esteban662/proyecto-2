@@ -3,18 +3,17 @@ let email = ""
 let confirmacion=""
 let mailTo
 
-if(localStorage.getItem("confirmacion")== "false"){
-    cuponDescuento()
-}else{
-    confirmacion= confirm("Desea ingresar Nombre e email?")
-    localStorage.setItem("confirmacion", confirmacion)
-    if(localStorage.getItem("confirmacion")==true){
-        inicioUsuario()
-    }else{
-        cuponDescuento()
-    }
-}
+if (localStorage.getItem("confirmacion")==null){
 
+    confirmacion = confirm("Desea ingresar Nombre e email?")
+    localStorage.setItem("confirmacion", confirmacion)
+      if(confirmacion==true){
+      inicioUsuario()
+    
+      }
+    }else{
+      saludaHora()
+      }
 
 
 
