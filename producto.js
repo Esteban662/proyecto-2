@@ -13,7 +13,7 @@ if (localStorage.getItem("confirmacion")==null){
     
       }
     }else{
-      saludaHora()
+      popUp()
       }
 
 
