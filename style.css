@@ -58,9 +58,9 @@ img{
 }
 
 table, th,tr,td{
-    width:90%;
+    width:600px;
     padding:15px;
-    margin-left: 70px;
+    margin-left:350px;
     text-align: center;
     border: 1px solid black;
     border-collapse: collapse;
