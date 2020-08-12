@@ -12,11 +12,9 @@ if (localStorage.getItem("confirmacion")==null){
       inicioUsuario()
     
       }
-    }else{
-      cuponDescuento()
-      }
+    }
 
-
+if(localStorage.getItem("nombre")){cuponDescuento()}
 
 
 //Funciones
