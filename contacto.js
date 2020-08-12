@@ -60,7 +60,8 @@ function enviarMail(mail){
      if(mail == true){
          alert("Estaremos enviandole las ultimas novedades a " + localStorage.getItem("email"))
          localStorage.setItem("mail", mail)
-     }
+         preguntaPopUp(popUp)
+        }
  }
 
 //Cupones
@@ -88,3 +89,10 @@ function saludaHoraInicio() {
     alert("Buenas noches " + localStorage.getItem("nombre") + ". Difrute la pagina!!!");
   }
   }
+  function preguntaPopUp(popUp){
+    popUp = confirm("Tenemos ofertas personalizadas que podrian interesarte, desea verlas?")
+   
+    if(popUp == true){
+        window.location.replace("ofertasPersonalizadas.html");
+     }
+ }
