@@ -15,7 +15,22 @@ if (localStorage.getItem("confirmacion")==null){
   
     }
   }else{
-    saludaHora()
+    saludaHora2()
+    }
+
+    function saludaHora2() {
+      if (hora >= 00 && hora <= 06) {
+        alert("Buenas madrugadas");
+      }
+      if (hora >= 07 && hora <= 12) {
+        alert("Buen dia");
+      }
+      if (hora >= 13 && hora <= 18) {
+        alert("Buenas tardes");
+      }
+      if (hora >= 19 && hora <= 23) {
+        alert("Buenas noches");
+      }
     }
 
 function saludaHora() {
