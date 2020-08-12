@@ -15,11 +15,12 @@ if (localStorage.getItem("confirmacion")==null){
   
     }
   }else{
-      if(localStorage.getItem("nombre")){saludaHora()}
-      else{saludaHora2}
-    }
+    if(localStorage.getItem("nombre")){saludaHora()}
+    else{saludaHora2()}
+  }
+     
 
-function saludaHora(hora) {
+function saludaHora() {
   if (hora >= 00 && hora <= 06) {
     alert("Buenas madrugadas " + localStorage.getItem("nombre"));
   }
@@ -34,7 +35,7 @@ function saludaHora(hora) {
   }
 }
 
-function saludaHora2(hora) {
+function saludaHora2() {
   if (hora >= 00 && hora <= 06) {
     alert("Buenas madrugadas");
   }
