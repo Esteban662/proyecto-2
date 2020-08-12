@@ -3,8 +3,6 @@ let email = ""
 let confirmacion=""
 let mailTo
 let popUp
-const fecha = new Date();
-const hora = fecha.getHours();
 
 if(localStorage.getItem("confirmacion")== "false"){
     preguntaPopUp()
@@ -21,13 +19,6 @@ if(localStorage.getItem("confirmacion")== "false"){
 
 
 
-
-function saludaHora(hora){
-            if(hora>= 00 && hora<= 06){alert("Buenas madrugadas " + localStorage.getItem("nombre"))}
-            if(hora>= 07 && hora<= 12){alert("Buen dia " + localStorage.getItem("nombre"))}
-            if(hora>= 13 && hora<= 18){alert("Buenas tardes " + localStorage.getItem("nombre"))}
-            if(hora >= 19 && hora <= 23){alert("Buenas noches " + localStorage.getItem("nombre"))}
-}
 
 
 function enviarMail(mail, popUp){
