@@ -6,35 +6,19 @@ let mailTo;
 const fecha = new Date();
 const hora = fecha.getHours();
 
-if (localStorage.getItem("confirmacion")==null){
-
-  confirmacion = confirm("Desea ingresar Nombre e email?")
-  localStorage.setItem("confirmacion", confirmacion)
-    if(confirmacion==true){
-    inicioUsuario()
-  
+if(localStorage.getItem("confirmacion")== "false"){
+    saludaHora()
+}else{
+    confirmacion= confirm("Desea ingresar Nombre e email?")
+    localStorage.setItem("confirmacion", confirmacion)
+    if(localStorage.getItem("confirmacion")==true){
+        inicioUsuario()
+    }else{
+        saludaHora()
     }
-  }else{
-    if(localStorage.getItem("nombre")){saludaHora()}
-    else{saludaHora2()}  
-    }
+}
 
-    function saludaHora2() {
-      if (hora >= 00 && hora <= 06) {
-        alert("Buenas madrugadas");
-      }
-      if (hora >= 07 && hora <= 12) {
-        alert("Buen dia");
-      }
-      if (hora >= 13 && hora <= 18) {
-        alert("Buenas tardes");
-      }
-      if (hora >= 19 && hora <= 23) {
-        alert("Buenas noches");
-      }
-    }
-
-function saludaHora() {
+function saludaHora(hora) {
   if (hora >= 00 && hora <= 06) {
     alert("Buenas madrugadas " + localStorage.getItem("nombre"));
   }
