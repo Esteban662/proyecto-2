@@ -13,9 +13,7 @@ if (localStorage.getItem("confirmacion")==null){
       inicioUsuario()
         
       }
-    }else{
-      preguntaPopUp()
-      }
+    }
 
 
     //Funciones
