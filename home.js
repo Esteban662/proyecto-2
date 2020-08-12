@@ -15,7 +15,8 @@ if (localStorage.getItem("confirmacion")==null){
   
     }
   }else{
-    saludaHora2()
+    if(localStorage.getItem("nombre")){saludaHora()}
+    else{saludaHora2()}  
     }
 
     function saludaHora2() {
