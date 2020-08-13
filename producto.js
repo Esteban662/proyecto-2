@@ -10,12 +10,11 @@ if (localStorage.getItem("confirmacion")==null){
     confirmacion = confirm("Desea ingresar Nombre e email?")
     localStorage.setItem("confirmacion", confirmacion)
       if(confirmacion==true){
-      inicioUsuario()
       preguntaPopUp()
         
       }
     }
-
+    if(localStorage.getItem("nombre")){preguntaPopUp()}
 
     //Funciones
     //Inicio de usuario
@@ -23,6 +22,7 @@ if (localStorage.getItem("confirmacion")==null){
         nombreValid()
         emailValid()
         saludaHoraInicio()
+        
     }
     //Guardar nombre y validarlo
     function nombreValid(nombre){

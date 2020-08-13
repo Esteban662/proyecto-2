@@ -62,7 +62,7 @@ if (localStorage.getItem("confirmacion")==null){
           localStorage.getItem("email")
       );
       localStorage.setItem("mail", mail);
-      preguntaPopUp(popUp)
+      
     }
   }
   //Saludar segun la hora del dia
