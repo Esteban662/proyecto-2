@@ -11,6 +11,7 @@ if (localStorage.getItem("confirmacion")==null){
     localStorage.setItem("confirmacion", confirmacion)
       if(confirmacion==true){
       inicioUsuario()
+      preguntaPopUp()
         
       }
     }
