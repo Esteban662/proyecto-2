@@ -62,6 +62,7 @@ if (localStorage.getItem("confirmacion")==null){
           localStorage.getItem("email")
       );
       localStorage.setItem("mail", mail);
+      preguntaPopUp(popUp)
     }
   }
   //Saludar segun la hora del dia
@@ -97,7 +98,13 @@ if (hora >= 19 && hora <= 23) {
 
 
 
-
+function preguntaPopUp(popUp){
+  popUp = confirm("Tenemos ofertas personalizadas que podrian interesarte, desea verlas?")
+ 
+  if(popUp == true){
+      window.location.replace("ofertasPersonalizadas.html");
+   }
+}
 
  
 
