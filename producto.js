@@ -10,7 +10,7 @@ if (localStorage.getItem("confirmacion")==null){
     confirmacion = confirm("Desea ingresar Nombre e email?")
     localStorage.setItem("confirmacion", confirmacion)
       if(confirmacion==true){
-      preguntaPopUp()
+      inicioUsuario()
         
       }
     }
@@ -58,7 +58,7 @@ if (localStorage.getItem("confirmacion")==null){
     if(mail == true){
         alert("Estaremos enviandole las ultimas novedades a " + localStorage.getItem("email"))
         localStorage.setItem("mail", mail)
-        preguntaPopUp()
+       
         }
     }
     //Mostrar popUp
