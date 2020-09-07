@@ -4,18 +4,30 @@ let confirmacion=""
 let mailTo
 const fecha = new Date();
 const hora = fecha.getHours();
-if (localStorage.getItem("confirmacion")==null){
+const postUrl = "https://demo2420474.mockable.io/userData"
 
+if (localStorage.getItem("confirmacion")==null){
+    
     confirmacion = confirm("Desea ingresar Nombre e email?")
     localStorage.setItem("confirmacion", confirmacion)
-      if(confirmacion==true){
-      inicioUsuario()
-    
+    if(confirmacion==true){
+        inicioUsuario()
+        
       }
     }
-
-if(localStorage.getItem("nombre")){cuponDescuento()}
-
+    
+    if(localStorage.getItem("nombre")){cuponDescuento()}
+    
+let arrUsuario = [ `token: "GRUPOB2020"`, `name: ${localStorage.getItem("nombre")}`, `email: ${localStorage.getItem("email")}`, `sendEmail: ${localStorage.getItem("mail")}` ]
+    fetch(postUrl,{
+    method: 'POST',
+    body: JSON.stringify(arrUsuario) ,
+    headers:{'Content-Type':'application/json'}
+}).then(function(response){
+    return response.json()
+}).then(function(usuario){
+    console.log(usuario)
+})
 
 //Funciones
 //Inicio de usuario
@@ -63,6 +75,7 @@ function enviarMail(mail){
          preguntaPopUp(popUp)
         }
  }
+
 
 //Cupones
 
