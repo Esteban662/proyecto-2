@@ -5,20 +5,41 @@ let confirmacion = "";
 let mailTo;
 const fecha = new Date();
 const hora = fecha.getHours();
+let urlBanner = "http://demo2420474.mockable.io/getHomeBanner"
+let bannerArr = []
+
 
 if (localStorage.getItem("confirmacion")==null){
   
   confirmacion = confirm("Desea ingresar Nombre e email?")
   localStorage.setItem("confirmacion", confirmacion)
-    if(confirmacion==true){
-      inicioUsuario()
-      
-    }
+  if(confirmacion==true){
+    inicioUsuario()
+    
   }
-  
+}
+
+let divBanner = document.querySelector(".banner")
+fetch(urlBanner)
+.then(function(response){
+  return response.json()
+})
+.then(function(arrImagen){
+  imagenDOM(arrImagen, divBanner)
+  })
   
   
   //Funciones
+
+ 
+  function imagenDOM(imagen, banner){
+
+    banner.innerHTML += `<img src = "${imagen.imgURL}" title = "${imagen.title}" >`
+
+  }
+ 
+ 
+ 
   //Inicio de usuario
   function inicioUsuario(){
     nombreValid()
