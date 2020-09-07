@@ -14,7 +14,6 @@ if (localStorage.getItem("confirmacion")==null){
         
       }
     }
-    if(localStorage.getItem("nombre")){preguntaPopUp()}
 
     //Funciones
     //Inicio de usuario
@@ -61,14 +60,7 @@ if (localStorage.getItem("confirmacion")==null){
        
         }
     }
-    //Mostrar popUp
-    function preguntaPopUp(popUp){
-       popUp = confirm("Tenemos ofertas personalizadas que podrian interesarte, desea verlas?")
-      
-       if(popUp == true){
-           window.location.replace("ofertasPersonalizadas.html");
-        }
-    }
+    
     //Saluda segun hora
     function saludaHoraInicio() {
         if (hora >= 00 && hora <= 06) {

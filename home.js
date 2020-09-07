@@ -14,7 +14,7 @@ if (localStorage.getItem("confirmacion")==null){
       inicioUsuario()
       
     }
-  }else{if(localStorage.getItem("nombre")){saludaHora()}}
+  }
   
   
   
@@ -23,7 +23,6 @@ if (localStorage.getItem("confirmacion")==null){
   function inicioUsuario(){
     nombreValid()
     emailValid()
-    saludaHoraInicio()
   }
   //Guardar y validar nombre
   function nombreValid(nombre){
@@ -66,36 +65,7 @@ if (localStorage.getItem("confirmacion")==null){
     }
   }
   //Saludar segun la hora del dia
-  function saludaHora() {
-    if (hora >= 00 && hora <= 06) {
-      alert("Buenas madrugadas " + localStorage.getItem("nombre"));
-  }
-  if (hora >= 07 && hora <= 12) {
-    alert("Buen dia " + localStorage.getItem("nombre"));
-  }
-  if (hora >= 13 && hora <= 18) {
-    alert("Buenas tardes " + localStorage.getItem("nombre"));
-  }
-  if (hora >= 19 && hora <= 23) {
-    alert("Buenas noches " + localStorage.getItem("nombre"));
-  }
-}
-
-function saludaHoraInicio() {
-  if (hora >= 00 && hora <= 06) {
-    alert("Buenas madrugadas " + localStorage.getItem("nombre") + ". Difrute la pagina!!!" );
-}
-if (hora >= 07 && hora <= 12) {
-  alert("Buen dia " + localStorage.getItem("nombre") + ". Difrute la pagina!!!");
-}
-if (hora >= 13 && hora <= 18) {
-  alert("Buenas tardes " + localStorage.getItem("nombre") + ". Difrute la pagina!!!");
-}
-if (hora >= 19 && hora <= 23) {
-  alert("Buenas noches " + localStorage.getItem("nombre") + ". Difrute la pagina!!!");
-}
-}
-
+  
 
 
 function preguntaPopUp(popUp){
