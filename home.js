@@ -6,7 +6,7 @@ let mailTo;
 const fecha = new Date();
 const hora = fecha.getHours();
 let urlBanner = "http://demo2420474.mockable.io/getHomeBanner"
-let bannerArr = []
+
 
 
 if (localStorage.getItem("confirmacion")==null){
@@ -34,7 +34,7 @@ fetch(urlBanner)
  
   function imagenDOM(imagen, banner){
 
-    banner.innerHTML += `<img src = "${imagen.imgURL}" title = "${imagen.title}" >`
+    banner.innerHTML += `<a title= "LinkImagen" href= "${imagen.link}"><img src = "${imagen.imgUrl}" title = "${imagen.title}" alt="LinkImagen" ></a>`
 
   }
  
