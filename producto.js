@@ -5,6 +5,48 @@ let mailTo
 let popUp
 const fecha = new Date();
 const hora = fecha.getHours();
+const divContenedor=document.querySelector(".contenedor")
+const url = "https://demo2420474.mockable.io/productList"
+
+
+
+fetch(url).then (function(response){
+    return response.json()
+}).then(function(productos){
+    productos.forEach(function(producto){
+        crearProducto(producto);
+        
+    })                                 
+})
+
+function crearProducto(producto){
+if (producto.discountPrice === undefined ) {
+    divContenedor.innerHTML+= `<div class="caja"><img src="${producto.imgUrl}" id="foto1" title="${producto.title}">
+    <div class="texto">
+    <h5>${producto.title}</h5>
+   <div class="descripcion"> ${producto.description}</div><br>
+   <div class="stock"> En stock:${producto.inStock} unidades</div><br>
+   <div class="precio"> Precio:${producto.currency} ${producto.price}</div><br>
+   
+    </div>
+    </div>`   
+    
+}else {
+    divContenedor.innerHTML+= `<div class="caja"><img src="${producto.imgUrl}" id="foto1" title="${producto.title}">
+    <div class="texto">
+    <h5>${producto.title}</h5>
+   <div class="descripcion"> ${producto.description}</div><br>
+   <div class="stock"> En stock:${producto.inStock} unidades</div><br>
+   <div class="precio"> Precio Antes:<strike> ${producto.currency} ${producto.price} </strike><br> Precio Ahora:<strong>${producto.currency} ${producto.discountPrice}</strong></div><br>
+   </div>
+    </div>`   
+}
+
+
+}
+
+
+
 if (localStorage.getItem("confirmacion")==null){
 
     confirmacion = confirm("Desea ingresar Nombre e email?")
