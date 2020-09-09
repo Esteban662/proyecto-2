@@ -6,6 +6,8 @@ let mailTo;
 const fecha = new Date();
 const hora = fecha.getHours();
 let urlBanner = "https://demo2420474.mockable.io/getHomeBanner"
+const postUrl = "https://demo2420474.mockable.io/userData"
+
  //Posicionamiento
  let divBanner = document.querySelector(".banner")
 
@@ -27,7 +29,22 @@ fetch(urlBanner)
 .then(function(arrImagen){
   imagenDOM(arrImagen, divBanner)
   })
-  
+ 
+  let arrUsuario = {
+    token: "GRUPOB2020",
+name: localStorage.getItem("nombre"),
+email: localStorage.getItem("email"),
+sendEmail: localStorage.getItem("mail")
+}
+fetch(postUrl,{
+method: 'POST',
+body: JSON.stringify(arrUsuario) ,
+headers:{'Content-Type':'application/json'}
+}).then(function(response){
+return response.json()
+}).then(function(json){
+console.log(json)
+})
   
   //Funciones
 
