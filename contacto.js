@@ -25,9 +25,7 @@ if (localStorage.getItem("confirmacion")==null){
         inicioUsuario()
         
       }
-    }
-    
-    
+    }  
     
     let arrUsuario = {
         token: "GRUPOB2020",
@@ -141,10 +139,4 @@ function saludaHoraInicio() {
     alert("Buenas noches " + localStorage.getItem("nombre") + ". Difrute la pagina!!!");
   }
   }
-  function preguntaPopUp(popUp){
-    popUp = confirm("Tenemos ofertas personalizadas que podrian interesarte, desea verlas?")
-   
-    if(popUp == true){
-        window.location.replace("ofertasPersonalizadas.html");
-     }
- }
+ 

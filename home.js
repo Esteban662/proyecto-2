@@ -6,7 +6,8 @@ let mailTo;
 const fecha = new Date();
 const hora = fecha.getHours();
 let urlBanner = "http://demo2420474.mockable.io/getHomeBanner"
-
+ //Posicionamiento
+ let divBanner = document.querySelector(".banner")
 
 
 if (localStorage.getItem("confirmacion")==null){
@@ -19,7 +20,6 @@ if (localStorage.getItem("confirmacion")==null){
   }
 }
 
-let divBanner = document.querySelector(".banner")
 fetch(urlBanner)
 .then(function(response){
   return response.json()
@@ -31,14 +31,11 @@ fetch(urlBanner)
   
   //Funciones
 
- 
   function imagenDOM(imagen, banner){
 
     banner.innerHTML += `<a title= "LinkImagen" href= "${imagen.link}"><img src = "${imagen.imgUrl}" title = "${imagen.title}" alt="LinkImagen" ></a>`
 
   }
- 
- 
  
   //Inicio de usuario
   function inicioUsuario(){
@@ -85,7 +82,7 @@ fetch(urlBanner)
       
     }
   }
-  //Saludar segun la hora del dia
+  
   
 
 

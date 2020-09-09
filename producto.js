@@ -19,31 +19,6 @@ fetch(url).then (function(response){
     })                                 
 })
 
-function crearProducto(producto){
-if (producto.discountPrice === undefined ) {
-    divContenedor.innerHTML+= `<div class="caja"><img src="${producto.imgUrl}" id="foto1" title="${producto.title}">
-    <div class="texto">
-    <h5>${producto.title}</h5>
-   <div class="descripcion"> ${producto.description}</div><br>
-   <div class="stock"> En stock:${producto.inStock} unidades</div><br>
-   <div class="precio"> Precio:<strong>${producto.currency} ${producto.price}<strong></div><br>
-   
-    </div>
-    </div>`   
-    
-}else {
-    divContenedor.innerHTML+= `<div class="caja"><img src="${producto.imgUrl}" id="foto1" title="${producto.title}">
-    <div class="texto">
-    <h5>${producto.title}</h5>
-   <div class="descripcion"> ${producto.description}</div><br>
-   <div class="stock"> En stock:${producto.inStock} unidades</div><br>
-   <div class="precio"> Precio Antes:<strike> ${producto.currency} ${producto.price} </strike><br> Precio Ahora:<strong>${producto.currency} ${producto.discountPrice}</strong></div><br>
-   </div>
-    </div>`   
-}
-
-
-}
 
 
 
@@ -51,13 +26,38 @@ if (localStorage.getItem("confirmacion")==null){
 
     confirmacion = confirm("Desea ingresar Nombre e email?")
     localStorage.setItem("confirmacion", confirmacion)
-      if(confirmacion==true){
-      inicioUsuario()
-      preguntaPopUp() 
+    if(confirmacion==true){
+        inicioUsuario()
+       
     }
     }
     if(localStorage.getItem("nombre")){cuponDescuento()}
     //Funciones
+    function crearProducto(producto){
+    if (producto.discountPrice === undefined ) {
+        divContenedor.innerHTML+= `<div class="caja"><img src="${producto.imgUrl}" id="foto1" title="${producto.title}">
+        <div class="texto">
+        <h5>${producto.title}</h5>
+       <div class="descripcion"> ${producto.description}</div><br>
+       <div class="stock"> En stock:${producto.inStock} unidades</div><br>
+       <div class="precio"> Precio:<strong>${producto.currency} ${producto.price}<strong></div><br>
+       
+        </div>
+        </div>`   
+        
+    }else {
+        divContenedor.innerHTML+= `<div class="caja"><img src="${producto.imgUrl}" id="foto1" title="${producto.title}">
+        <div class="texto">
+        <h5>${producto.title}</h5>
+       <div class="descripcion"> ${producto.description}</div><br>
+       <div class="stock"> En stock:${producto.inStock} unidades</div><br>
+       <div class="precio"> Precio Antes:<strike> ${producto.currency} ${producto.price} </strike><br> Precio Ahora:<strong>${producto.currency} ${producto.discountPrice}</strong></div><br>
+       </div>
+        </div>`   
+    }
+    }
+    
+    
     //Inicio de usuario
     function inicioUsuario(){
         nombreValid()
@@ -119,14 +119,7 @@ if (localStorage.getItem("confirmacion")==null){
       }
       }
 
-      //Funcion PopUp
-      function preguntaPopUp(popUp){
-        popUp = confirm("Tenemos ofertas personalizadas que podrian interesarte, desea verlas?")
-       
-        if(popUp == true){
-            window.location.replace("ofertasPersonalizadas.html");
-         }
-      }
+      
 
     //Cupones
 
