@@ -42,11 +42,14 @@
      <div id="contenedor">
      <form action="https://ptsv2.com/t/guayerd/post" method="POST">
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre"  name="nombre">
+        <input type="text" id="nombre"  name="nombre" required>
         <label for="email">Email</label>
-        <input type="email" id="email" name="nombre">
+        <input type="email" id="email" name="nombre" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <label for="phone">Telefono</label>
+        <input type="number" name="phone" id="phone" required>
         <label for="tema">Tema</label>
-        <select name="tema" id="tema">
+        <select name="tema" id="tema" required>
+            <option></option>
             <option value="venta">Venta</option>
             <option value="trabajo">Trabajo</option>
             <option value="reparacion">Reparación</option>
@@ -54,7 +57,7 @@
         </select>
         <input type="hidden" name="grupo" value="B" />
         <label for="Mensaje">Mensaje</label>
-        <textarea name="Mensaje" id="Mensaje" cols="30" rows="10"></textarea>
+        <textarea name="Mensaje" id="Mensaje" cols="30" rows="10" required></textarea>
         <label for="enviar">Enviar</label>
         <input type="submit" id="submit" name="Enviar">
 
