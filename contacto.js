@@ -27,7 +27,7 @@ if (localStorage.getItem("confirmacion")==null){
       }
     }
     
-    if(localStorage.getItem("nombre")){cuponDescuento()}
+    
     
     let arrUsuario = {
         token: "GRUPOB2020",
@@ -125,16 +125,7 @@ function enviarMail(mail){
  }
 
 
-//Cupones
 
-function cuponDescuento() {
-    let max = 4;
-    let min = 1;
-    let PROMO = Math.floor(Math.random() * max) + min;
-    let arrPromo = ["5HOTSALE para obtener un 5% de descuento","10HOTSALE para obtener un 10% de descuento","15HOTSALE para obtener un 15% de descuento","20HOTSALE para obtener un 20% de descuento","25HOTSALE para obtener un 25% de descuento"];
-    alert("Estimado/a " + localStorage.getItem("nombre") + ". Gracias por elegirnos! Le obsequiamos el codigo " + arrPromo[PROMO] + "con su compra")
-
-}
 //Saluda segun hora
 function saludaHoraInicio() {
     if (hora >= 00 && hora <= 06) {

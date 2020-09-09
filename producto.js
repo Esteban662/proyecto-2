@@ -7,7 +7,7 @@ const fecha = new Date();
 const hora = fecha.getHours();
 const divContenedor=document.querySelector(".contenedor")
 const url = "https://demo2420474.mockable.io/productList"
-
+const cuponUrl = "https://demo2420474.mockable.io/getCoupon"
 
 
 fetch(url).then (function(response){
@@ -26,7 +26,7 @@ if (producto.discountPrice === undefined ) {
     <h5>${producto.title}</h5>
    <div class="descripcion"> ${producto.description}</div><br>
    <div class="stock"> En stock:${producto.inStock} unidades</div><br>
-   <div class="precio"> Precio:${producto.currency} ${producto.price}</div><br>
+   <div class="precio"> Precio:<strong>${producto.currency} ${producto.price}<strong></div><br>
    
     </div>
     </div>`   
@@ -53,10 +53,10 @@ if (localStorage.getItem("confirmacion")==null){
     localStorage.setItem("confirmacion", confirmacion)
       if(confirmacion==true){
       inicioUsuario()
-        
-      }
+      preguntaPopUp() 
     }
-
+    }
+    if(localStorage.getItem("nombre")){cuponDescuento()}
     //Funciones
     //Inicio de usuario
     function inicioUsuario(){
@@ -119,7 +119,29 @@ if (localStorage.getItem("confirmacion")==null){
       }
       }
 
+      //Funcion PopUp
+      function preguntaPopUp(popUp){
+        popUp = confirm("Tenemos ofertas personalizadas que podrian interesarte, desea verlas?")
+       
+        if(popUp == true){
+            window.location.replace("ofertasPersonalizadas.html");
+         }
+      }
 
-    
+    //Cupones
 
-    
+    function cuponDescuento() {
+    fetch(cuponUrl)
+    .then(function(response){
+        return response.json()
+    }).then(function(cupones){
+        
+            descuento(cupones)
+        
+    })
+}
+
+function descuento(dato){
+
+    alert(`Con este codigo ${dato.text} tenes un descuento de ${dato.discountPercentage}%`)
+}

@@ -89,13 +89,7 @@ fetch(urlBanner)
   
 
 
-function preguntaPopUp(popUp){
-  popUp = confirm("Tenemos ofertas personalizadas que podrian interesarte, desea verlas?")
- 
-  if(popUp == true){
-      window.location.replace("ofertasPersonalizadas.html");
-   }
-}
+
 
  
 
